@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panier | Thrina Creation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-wrap">
+      <a class="brand" href="index.html">
+        <img src="images/logo/logo1.jpg" alt="Logo Thrina Creation">
+        <span>Thrina Creation</span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" data-menu-toggle>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="siteNav">
+        <a href="index.html">Accueil</a>
+        <a href="index.html#catalogue">Boutique</a>
+        <a href="panier.html">Panier <strong data-cart-count>0</strong></a>
+        <a href="compte.html">Compte (optionnel)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <div class="container">
+      <div class="section-head">
+        <h1>Panier et commande</h1>
+        <p>Commande invite active: le client peut commander sans creer de compte.</p>
+      </div>
+
+      <section class="card-block">
+        <div class="cart-list" id="cartItems"></div>
+        <div class="cart-summary">
+          <p>Articles: <strong id="cartCountSummary">0</strong></p>
+          <p>Sous-total: <strong id="cartSubTotal">0 XAF</strong></p>
+          <p>Total: <strong id="cartTotal">0 XAF</strong></p>
+          <button class="btn btn-ghost" type="button" id="clearCartBtn">Vider le panier</button>
+        </div>
+      </section>
+
+      <section class="card-block">
+        <h2>Finaliser la commande</h2>
+        <p class="muted">Si vous avez un compte, connectez-vous pour suivre la progression de vos commandes.</p>
+
+        <form class="checkout-form" id="checkoutForm">
+          <label for="fullName">Nom complet</label>
+          <input type="text" id="fullName" name="fullName" required>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="phone">Telephone</label>
+          <input type="tel" id="phone" name="phone" required>
+
+          <label for="address">Adresse de livraison</label>
+          <textarea id="address" name="address" rows="3" required></textarea>
+
+          <label for="paymentMethod">Mode de paiement</label>
+          <select id="paymentMethod" name="paymentMethod" required>
+            <option value="mobile_money">Paiement Mobile Money</option>
+            <option value="carte">Paiement par carte</option>
+            <option value="livraison">Paiement a la livraison</option>
+          </select>
+
+          <div id="paymentExtraFields" class="payment-extra"></div>
+
+          <label for="notes">Notes (optionnel)</label>
+          <textarea id="notes" name="notes" rows="2"></textarea>
+
+          <button class="btn btn-primary" type="submit">Valider la commande</button>
+        </form>
+        <div id="orderResult" class="result-box"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>&copy; 2024 Thrina Cr&eacute;ation. L'art du fait main. by RX services</p>
+      <div class="liens-utiles">
+        <a href="politique.html">Politique de Confidentialit&eacute;</a>
+        <a href="livraison.html">Livraison &amp; Retours</a>
+      </div>
+      <div class="reseaux">
+        <a href="#">[Ic&ocirc;ne Facebook]</a>
+        <a href="#">[Ic&ocirc;ne Instagram]</a>
+      </div>
+      <div class="contact-footer">
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/store.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <script src="js/cart.js" defer></script>
+</body>
+</html>

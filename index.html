@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thrina Creation | Boutique artisanale</title>
+  <meta name="description" content="Boutique artisanale simple pour sacs, bijoux et accessoires. Commande sans compte.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-wrap">
+      <a class="brand" href="index.html">
+        <img src="images/logo/logo1.jpg" alt="Logo Thrina Creation">
+        <span>Thrina Creation</span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" data-menu-toggle>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="siteNav">
+        <a href="index.html">Accueil</a>
+        <a href="#catalogue">Boutique</a>
+        <a href="panier.html">Panier <strong data-cart-count>0</strong></a>
+        <a href="compte.html">Compte (optionnel)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Collection artisanale</p>
+          <h1>Des creations faites main, pretes a commander sans compte.</h1>
+          <p class="hero-copy">
+            Thrina Creation propose des sacs, bijoux et accessoires. Le client ajoute au panier et passe commande en mode invite.
+            Le compte client reste facultatif.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#catalogue">Voir les articles</a>
+            <a class="btn btn-ghost" href="panier.html">Commander maintenant</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <img src="images/produit/3.jpg" alt="Article vedette Thrina">
+          <div class="hero-card-body">
+            <p>Nouveau style perle multicolore</p>
+            <strong>Edition artisanale</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="highlights">
+      <div class="container highlight-grid">
+        <article>
+          <h2>Commande invite</h2>
+          <p>Aucun compte obligatoire pour commander.</p>
+        </article>
+        <article>
+          <h2>Paiement flexible</h2>
+          <p>Mobile Money, carte bancaire ou paiement a la livraison.</p>
+        </article>
+        <article>
+          <h2>Suivi client</h2>
+          <p>Le client connecte suit la progression de sa commande.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="catalogue" class="catalogue">
+      <div class="container">
+        <div class="section-head">
+          <h2>Catalogue</h2>
+          <p>Filtrez par categorie et ajoutez directement au panier.</p>
+        </div>
+
+        <div class="filters">
+          <button class="filter-chip is-active" data-filter="all" type="button">Tous</button>
+          <button class="filter-chip" data-filter="sacs" type="button">Sacs</button>
+          <button class="filter-chip" data-filter="bijoux" type="button">Bijoux</button>
+          <button class="filter-chip" data-filter="accessoires" type="button">Accessoires</button>
+        </div>
+
+        <div class="product-grid" data-product-grid></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>&copy; 2024 Thrina Cr&eacute;ation. L'art du fait main. by RX services</p>
+      <div class="liens-utiles">
+        <a href="politique.html">Politique de Confidentialit&eacute;</a>
+        <a href="livraison.html">Livraison &amp; Retours</a>
+      </div>
+      <div class="reseaux">
+        <a href="#">[Ic&ocirc;ne Facebook]</a>
+        <a href="#">[Ic&ocirc;ne Instagram]</a>
+      </div>
+      <div class="contact-footer">
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/store.js" defer></script>
+  <script src="js/app.js" defer></script>
+</body>
+</html>

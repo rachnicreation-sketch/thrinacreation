@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin | Thrina Creation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body id="adminPage">
+  <header class="site-header">
+    <div class="container header-wrap">
+      <a class="brand" href="index.html">
+        <img src="images/logo/logo1.jpg" alt="Logo Thrina Creation">
+        <span>Thrina Creation</span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" data-menu-toggle>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="siteNav">
+        <a href="index.html">Accueil</a>
+        <a href="index.html#catalogue">Boutique</a>
+        <a href="panier.html">Panier <strong data-cart-count>0</strong></a>
+        <a href="compte.html">Compte (optionnel)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <div class="container">
+      <section class="card-block" id="adminLoginSection">
+        <h1>Espace admin</h1>
+        <p class="muted">Compte admin simple pour suivre les commandes et publier de nouveaux articles.</p>
+
+        <div class="admin-hint">
+          <p><strong>Email:</strong> admin@thrina.local</p>
+          <p><strong>Mot de passe:</strong> admin123</p>
+        </div>
+
+        <form id="adminLoginForm" class="auth-form">
+          <label for="adminEmail">Email admin</label>
+          <input type="email" id="adminEmail" name="adminEmail" required>
+
+          <label for="adminPassword">Mot de passe</label>
+          <input type="password" id="adminPassword" name="adminPassword" required>
+
+          <button class="btn btn-primary" type="submit">Se connecter</button>
+        </form>
+
+        <div id="adminLoginMessage" class="result-box"></div>
+      </section>
+
+      <section id="adminDashboard" class="admin-dashboard hidden">
+        <div class="section-head">
+          <h2>Tableau de bord admin</h2>
+          <button class="btn btn-ghost" id="adminLogoutBtn" type="button">Se deconnecter</button>
+        </div>
+
+        <div class="admin-grid">
+          <article class="card-block">
+            <h3>Commandes recues</h3>
+            <div class="table-wrap">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Ref</th>
+                    <th>Date</th>
+                    <th>Client</th>
+                    <th>Total</th>
+                    <th>Paiement</th>
+                    <th>Statut</th>
+                  </tr>
+                </thead>
+                <tbody id="ordersBody"></tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="card-block">
+            <h3>Publier un nouvel article</h3>
+            <form id="productForm" class="admin-form">
+              <label for="productName">Nom de l'article</label>
+              <input id="productName" name="productName" type="text" required>
+
+              <label for="productCategory">Categorie</label>
+              <select id="productCategory" name="productCategory" required>
+                <option value="sacs">Sacs</option>
+                <option value="bijoux">Bijoux</option>
+                <option value="accessoires">Accessoires</option>
+              </select>
+
+              <label for="productPrice">Prix (XAF)</label>
+              <input id="productPrice" name="productPrice" type="number" min="1" required>
+
+              <label for="productStock">Stock</label>
+              <input id="productStock" name="productStock" type="number" min="0" required>
+
+              <label for="productImage">Image (URL ou chemin)</label>
+              <input id="productImage" name="productImage" type="text" placeholder="images/produit/11.jpg" required>
+
+              <label for="productDescription">Description</label>
+              <textarea id="productDescription" name="productDescription" rows="3" required></textarea>
+
+              <button class="btn btn-primary" type="submit">Publier</button>
+            </form>
+            <div id="productMessage" class="result-box"></div>
+          </article>
+        </div>
+
+        <article class="card-block">
+          <h3>Articles publies</h3>
+          <div class="table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Nom</th>
+                  <th>Categorie</th>
+                  <th>Prix</th>
+                  <th>Stock</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="productsBody"></tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>&copy; 2024 Thrina Cr&eacute;ation. L'art du fait main. by RX services</p>
+      <div class="liens-utiles">
+        <a href="politique.html">Politique de Confidentialit&eacute;</a>
+        <a href="livraison.html">Livraison &amp; Retours</a>
+      </div>
+      <div class="reseaux">
+        <a href="#">[Ic&ocirc;ne Facebook]</a>
+        <a href="#">[Ic&ocirc;ne Instagram]</a>
+      </div>
+      <div class="contact-footer">
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/store.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <script src="js/admin.js" defer></script>
+</body>
+</html>
