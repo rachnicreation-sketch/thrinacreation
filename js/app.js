@@ -1,17 +1,12 @@
 ﻿(function () {
   "use strict";
 
+  var WHATSAPP_PHONE = "242044513390";
+
   function formatPrice(value) {
     return new Intl.NumberFormat("fr-FR", {
       maximumFractionDigits: 0
     }).format(Number(value || 0)) + " XAF";
-  }
-
-  function setYear() {
-    var yearNodes = document.querySelectorAll("[data-year]");
-    yearNodes.forEach(function (node) {
-      node.textContent = String(new Date().getFullYear());
-    });
   }
 
   function showToast(message) {
@@ -30,12 +25,9 @@
     }, 2200);
   }
 
-  function refreshCartBadges() {
-    var count = window.ThrinaStore.getCartCount();
-    var badges = document.querySelectorAll("[data-cart-count]");
-    badges.forEach(function (badge) {
-      badge.textContent = String(count);
-    });
+  function buildWhatsAppUrl(product) {
+    var text = "Bonjour THRINA creation, je souhaite acheter: " + product.name + " (" + formatPrice(product.price) + ").";
+    return "https://wa.me/" + WHATSAPP_PHONE + "?text=" + encodeURIComponent(text);
   }
 
   function setupMenu() {
@@ -61,7 +53,7 @@
       '    <p class="muted">' + product.description + '</p>',
       '    <div class="product-meta">',
       '      <p class="price">' + formatPrice(product.price) + '</p>',
-      '      <button class="btn btn-primary" type="button" data-add-to-cart="' + product.id + '">Ajouter</button>',
+      '      <a class="btn btn-primary" href="' + buildWhatsAppUrl(product) + '" target="_blank" rel="noopener">Acheter</a>',
       "    </div>",
       "  </div>",
       "</article>"
@@ -107,41 +99,13 @@
     renderProducts("all");
   }
 
-  function setupAddToCart() {
-    document.body.addEventListener("click", function (event) {
-      var target = event.target;
-      if (!(target instanceof HTMLElement)) {
-        return;
-      }
-
-      var addButton = target.closest("[data-add-to-cart]");
-      if (!addButton) {
-        return;
-      }
-
-      var productId = addButton.getAttribute("data-add-to-cart");
-      var result = window.ThrinaStore.addToCart(productId, 1);
-
-      if (result.ok) {
-        refreshCartBadges();
-        showToast("Article ajoute au panier");
-      } else {
-        showToast(result.message || "Operation impossible");
-      }
-    });
-  }
-
   document.addEventListener("DOMContentLoaded", function () {
-    setYear();
     setupMenu();
     setupFilters();
-    setupAddToCart();
-    refreshCartBadges();
   });
 
   window.ThrinaApp = {
     formatPrice: formatPrice,
-    showToast: showToast,
-    refreshCartBadges: refreshCartBadges
+    showToast: showToast
   };
 })();

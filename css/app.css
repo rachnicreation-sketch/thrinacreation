@@ -644,6 +644,15 @@ select:focus {
   color: var(--ink-soft);
 }
 
+.coordonnees {
+  display: grid;
+  gap: 5px;
+}
+
+.coordonnees p {
+  margin: 0;
+}
+
 .liens-utiles,
 .reseaux,
 .contact-footer {
@@ -656,6 +665,18 @@ select:focus {
 .reseaux a,
 .contact-footer a {
   color: var(--ink-soft);
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 98px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #fffaf2;
+  font-weight: 600;
 }
 
 .liens-utiles a:hover,
