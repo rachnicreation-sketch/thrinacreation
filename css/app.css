@@ -814,4 +814,11 @@ select:focus {
     max-width: 220px;
     height: auto;
   }
-}
+} 
+ @ m e d i a   ( m i n - w i d t h :   7 6 8 p x )   {  
+     . s e r v i c e s - g r i d   {  
+         g r i d - t e m p l a t e - c o l u m n s :   r e p e a t ( 2 ,   1 f r )   ! i m p o r t a n t ;  
+         g a p :   3 0 p x ;  
+     }  
+ }  
+ 
