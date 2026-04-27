@@ -4,9 +4,9 @@
   --surface: #ffffff;
   --ink: #1f1d1a;
   --ink-soft: #585149;
-  --line: #ded5c7;
-  --brand: #b3471d;
-  --brand-strong: #8f3210;
+  --line: hsl(37, 26%, 83%);
+  --brand: #961515;
+  --brand-strong: #961515;
   --accent: #0f7a76;
   --accent-soft: #d8efed;
   --shadow: 0 14px 36px rgba(41, 24, 12, 0.12);
@@ -24,7 +24,7 @@ body {
 }
 
 body {
-  font-family: "Outfit", "Trebuchet MS", sans-serif;
+  font-family: "Bodoni MT", "Bodoni Moda", serif;
   color: var(--ink);
   background:
     radial-gradient(circle at 90% 12%, rgba(15, 122, 118, 0.1) 0, transparent 38%),
@@ -58,7 +58,7 @@ img {
 }
 
 .header-wrap {
-  min-height: 76px;
+  min-height: 90px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -73,13 +73,19 @@ img {
   letter-spacing: 0.5px;
 }
 
+.brand span {
+  font-family: "Bodoni MT", "Bodoni Moda", serif;
+  font-size: 1.5rem;
+  color: var(--brand);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
 .brand img {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid var(--surface);
-  box-shadow: 0 8px 20px rgba(31, 29, 26, 0.2);
+  width: auto;
+  height: 60px;
+  border-radius: 0;
+  object-fit: contain;
 }
 
 .site-nav {
@@ -150,7 +156,7 @@ img {
 
 .hero h1 {
   margin: 8px 0 14px;
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: "Bodoni MT", "Bodoni Moda", serif;
   font-size: clamp(2rem, 4vw, 3.5rem);
   line-height: 1.08;
 }
@@ -242,7 +248,7 @@ img {
 .section-head h1,
 .section-head h2 {
   margin: 0;
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: "Bodoni MT", "Bodoni Moda", serif;
   font-size: clamp(1.55rem, 3vw, 2.25rem);
 }
 
@@ -641,10 +647,10 @@ select:focus {
 }
 
 .footer-col h3 {
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: 1.4rem;
+  font-family: "Bodoni MT", "Bodoni Moda", serif;
+  font-size: 1.8rem;
   margin: 0 0 16px;
-  color: var(--ink);
+  color: var(--brand);
 }
 
 .footer-col h4 {
@@ -742,16 +748,19 @@ select:focus {
 }
 
 @keyframes floatCard {
+
   0%,
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-8px);
   }
 }
 
 @media (max-width: 1050px) {
+
   .hero-grid,
   .admin-grid,
   .two-col,
