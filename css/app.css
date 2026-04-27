@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --bg: #f7f4ee;
   --bg-soft: #fffdf9;
   --surface: #ffffff;
@@ -627,61 +627,96 @@ select:focus {
 }
 
 .site-footer {
+  background: linear-gradient(180deg, var(--bg-soft) 0%, #ebe2d3 100%);
   border-top: 1px solid var(--line);
-  background: rgba(255, 253, 249, 0.82);
+  padding: 60px 0 20px;
+  margin-top: 40px;
 }
 
-.footer-content {
-  min-height: 120px;
+.footer-grid {
   display: grid;
-  gap: 10px;
-  align-items: start;
-  padding: 16px 0;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
 }
 
-.footer-content p {
-  margin: 0;
+.footer-col h3 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.4rem;
+  margin: 0 0 16px;
+  color: var(--ink);
+}
+
+.footer-col h4 {
+  font-size: 1.1rem;
+  margin: 0 0 16px;
+  color: var(--ink);
+}
+
+.footer-col p {
   color: var(--ink-soft);
+  line-height: 1.6;
+  margin: 0 0 10px;
 }
 
-.coordonnees {
-  display: grid;
-  gap: 5px;
+.footer-col a {
+  color: var(--ink-soft);
+  transition: 0.25s ease;
+  display: inline-block;
+  margin-bottom: 8px;
 }
 
-.coordonnees p {
-  margin: 0;
+.footer-col a:hover {
+  color: var(--brand);
+  transform: translateX(4px);
 }
 
-.liens-utiles,
-.reseaux,
-.contact-footer {
+.footer-social .social-icons {
   display: flex;
   gap: 12px;
+  margin-bottom: 20px;
   flex-wrap: wrap;
 }
 
-.liens-utiles a,
-.reseaux a,
-.contact-footer a {
-  color: var(--ink-soft);
-}
-
-.social-link {
+.footer-social .social-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 98px;
-  padding: 8px 12px;
+  padding: 8px 16px;
   border-radius: 999px;
+  background: var(--surface);
   border: 1px solid var(--line);
-  background: #fffaf2;
+  color: var(--ink);
   font-weight: 600;
+  transition: 0.3s ease;
 }
 
-.liens-utiles a:hover,
-.reseaux a:hover,
-.contact-footer a:hover {
+.footer-social .social-link:hover {
+  background: var(--ink);
+  color: #ffffff;
+  border-color: var(--ink);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(31, 29, 26, 0.15);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(222, 213, 199, 0.6);
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.footer-bottom .rx-credit {
+  font-weight: 600;
   color: var(--brand);
 }
 
