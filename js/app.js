@@ -1,4 +1,4 @@
-﻿(function () {
+(function () {
   "use strict";
 
   var WHATSAPP_PHONE = "242044513390";
@@ -26,7 +26,8 @@
   }
 
   function buildWhatsAppUrl(product) {
-    var text = "Bonjour THRINA creation, je souhaite acheter: " + product.name + " (" + formatPrice(product.price) + ").";
+    var fullImageUrl = new URL(product.image, window.location.href).href;
+    var text = "Bonjour THRINA creation, je souhaite acheter : " + product.name + " (" + formatPrice(product.price) + ").\n\nLien de l'article : " + fullImageUrl;
     return "https://wa.me/" + WHATSAPP_PHONE + "?text=" + encodeURIComponent(text);
   }
 
